@@ -189,6 +189,31 @@ const Contact: React.FC = () => {
           </div>
         </div>
 
+        {/* Map Section */}
+        <div style={{ marginBottom: '3rem' }}>
+          <h2 style={{ color: '#003d82', marginBottom: '1.5rem' }}>Visit Us</h2>
+          <div style={{
+            borderRadius: '8px',
+            overflow: 'hidden',
+            boxShadow: '0 4px 12px rgba(0, 61, 130, 0.1)',
+            height: '400px'
+          }}>
+            <iframe
+              title="CO-IN Symposia Location"
+              width="100%"
+              height="100%"
+              style={{ border: 'none' }}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567891234!2d-74.00601234567891!3d40.71234567891234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzU0LjQiTiA3NMOuMDAnMjguMyJX!5e0!3m2!1sen!2sus!4v1234567891234"
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p style={{ color: '#666', marginTop: '1rem', fontSize: '0.95rem' }}>
+            📍 123 Innovation Street, Tech City, TC 12345 | Mon-Fri: 9AM-6PM | Sat: 10AM-4PM
+          </p>
+        </div>
+
         {/* Additional Info */}
         <div style={{
           background: '#f8f9fa',
