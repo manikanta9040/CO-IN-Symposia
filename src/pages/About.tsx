@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 import { contentData } from '../data/content';
-import '../styles/globals.css';
 
 const About: React.FC = () => {
   useEffect(() => {
@@ -12,7 +11,7 @@ const About: React.FC = () => {
   return (
     <div className="app">
       <Header />
-      <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '900px', margin: '0 auto', marginTop: '80px' }}>
+      <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '900px', margin: '0 auto' }}>
         <h1 style={{ color: '#003d82', marginBottom: '2rem' }}>About CO-IN Symposia</h1>
 
         {/* About Section */}

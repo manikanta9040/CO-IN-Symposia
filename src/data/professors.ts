@@ -43,45 +43,5 @@ export const professorsData: Professor[] = [
     affiliation: 'Benedictine College, Atchison, KS',
     role: 'Member',
     bio: 'Prof. Charles Sprouse III is an Associate Professor of Engineering at Benedictine College. He specializes in power generation and emissions reduction, using computational modeling to improve environmental stewardship. His research has been published and presented widely, covering topics like diesel filters and waste heat recovery.'
-  },
-  {
-    id: 5,
-    name: 'Prof. Debasish Kuila',
-    title: 'Professor of Materials Science',
-    affiliation: 'North Carolina A&T State University, CA',
-    role: 'Member',
-    bio: 'Prof. Debasish Kuila is a leading researcher in bioenergy and materials science at North Carolina A&T State University. His research interests include biomaterials, cell biology, drug toxicity screening, and catalysis. He is a recipient of the ChemCon Distinguished Speaker Award.'
-  },
-  {
-    id: 6,
-    name: 'Prof. Nikolaos Dimakis',
-    title: 'Professor of Physics',
-    affiliation: 'University of Texas Rio Grande Valley, Edinburg, TX',
-    role: 'Member',
-    bio: 'Prof. Nikolaos Dimakis earned his MS in Applied Optics and PhD in Physics from the University of Salford and IIT, respectively. He has held research positions at Argonne National Laboratory and IIT before joining the University of Texas-Pan American in 2004.'
-  },
-  {
-    id: 7,
-    name: 'Prof. V.S.R. Rajasekhar Pullabhotla',
-    title: 'Professor of Chemistry',
-    affiliation: 'University of Zululand, South Africa',
-    role: 'Member',
-    bio: 'Prof. Pullabhotla is Full Professor in the Department of Chemistry and principal investigator of the Catalysis Research Group at University of Zululand. He has 2 registered Patents and co-authored 66 publications. He has emerged as a C2 rated Scientist by National Research Foundation (NRF), South Africa.'
-  },
-  {
-    id: 8,
-    name: 'Prof. Nataša Novak Tušar',
-    title: 'Head of Laboratory for Catalysts',
-    affiliation: 'National Institute of Chemistry, Slovenia',
-    role: 'Member',
-    bio: 'Prof. Nataša Novak Tušar is Head of the Laboratory for catalysts, Department of Inorganic Chemistry and Technology, National Institute of Chemistry, Ljubljana, Slovenia. She has Twenty five years of experience in research working on a world-wide basis.'
-  },
-  {
-    id: 9,
-    name: 'Bhaskar Peddeti',
-    title: 'Tech Lead - Manufacturing & IT Systems',
-    affiliation: 'Sweden',
-    role: 'Member',
-    bio: 'Bhaskar Peddeti combines a strong background in manufacturing with a passion for system innovation. He has led major initiatives in PLM, PIM, and digital transformation. His work in product design and field service has helped streamline processes across global teams.'
   }
 ];

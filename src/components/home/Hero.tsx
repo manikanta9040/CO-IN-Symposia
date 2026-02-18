@@ -1,6 +1,5 @@
 import React from 'react';
-import { contentData } from '../data/content';
-import '../styles/Hero.css';
+import { contentData } from '../../data/content';
 
 const Hero: React.FC = () => {
   return (

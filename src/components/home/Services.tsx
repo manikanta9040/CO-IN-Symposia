@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { servicesData } from '../data/services';
-import '../styles/Services.css';
+import { servicesData } from '../../data/services';
 
 const Services: React.FC = () => {
   return (

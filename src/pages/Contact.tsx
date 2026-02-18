@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import '../styles/globals.css';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 
 const Contact: React.FC = () => {
   useEffect(() => {
@@ -17,7 +16,7 @@ const Contact: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -25,9 +24,7 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
-    // Reset form
     setFormData({ name: '', email: '', subject: '', message: '' });
     alert('Thank you for your message! We will get back to you soon.');
   };
@@ -35,220 +32,112 @@ const Contact: React.FC = () => {
   return (
     <div className="app">
       <Header />
-      <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '900px', margin: '0 auto' }}>
-        <h1>Contact Us</h1>
-        <p style={{ fontSize: '1.1rem', color: '#666', marginBottom: '2rem' }}>
-          Have questions about our services or want to discuss your conference needs? Get in touch with us today.
-        </p>
+      <main className="contact-page">
+        <section className="contact-hero">
+          <h1>Contact Us</h1>
+          <p>
+            Have questions about our services or want to discuss your conference needs? Get in touch with us today.
+          </p>
+        </section>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
-          {/* Contact Information */}
-          <div>
-            <h3 style={{ color: '#003d82', marginBottom: '1.5rem' }}>Contact Information</h3>
-            
-            <div style={{ marginBottom: '2rem' }}>
-              <h4 style={{ color: '#1a1a1a', marginBottom: '0.5rem' }}>Email</h4>
-              <a href="mailto:info@coinsymposia.org" style={{ color: '#003d82', textDecoration: 'none' }}>
-                info@coinsymposia.org
-              </a>
+        <section className="contact-grid">
+          <article className="contact-card">
+            <h3>Contact Information</h3>
+
+            <div className="contact-item">
+              <h4>Email</h4>
+              <a href="mailto:info@coinsymposia.org">info@coinsymposia.org</a>
             </div>
 
-            <div style={{ marginBottom: '2rem' }}>
-              <h4 style={{ color: '#1a1a1a', marginBottom: '0.5rem' }}>Phone</h4>
-              <a href="tel:+1234567890" style={{ color: '#003d82', textDecoration: 'none' }}>
-                +1 (234) 567-890
-              </a>
+            <div className="contact-item">
+              <h4>Phone</h4>
+              <a href="tel:+15122702990">+1 512 270 2990</a>
             </div>
 
-            <div style={{ marginBottom: '2rem' }}>
-              <h4 style={{ color: '#333', marginBottom: '0.5rem' }}>Address</h4>
-              <p style={{ color: '#666', lineHeight: '1.6' }}>
-                CO-IN Symposia<br />
-                123 Innovation Street<br />
-                Tech City, TC 12345<br />
+            <div className="contact-item">
+              <h4>Address</h4>
+              <p>
+                CO-IN Symposia
+                <br />
+                123 Innovation Street
+                <br />
+                Tech City, TC 12345
+                <br />
                 Country
               </p>
             </div>
 
-            <div>
-              <h4 style={{ color: '#333', marginBottom: '0.5rem' }}>Business Hours</h4>
-              <p style={{ color: '#666', lineHeight: '1.6' }}>
-                Monday - Friday: 9:00 AM - 6:00 PM<br />
-                Saturday: 10:00 AM - 4:00 PM<br />
+            <div className="contact-item">
+              <h4>Business Hours</h4>
+              <p>
+                Monday - Friday: 9:00 AM - 6:00 PM
+                <br />
+                Saturday: 10:00 AM - 4:00 PM
+                <br />
                 Sunday: Closed
               </p>
             </div>
-          </div>
+          </article>
 
-          {/* Contact Form */}
-          <div>
-            <h3 style={{ color: '#003d82', marginBottom: '1.5rem' }}>Send us a Message</h3>
-            <form onSubmit={handleSubmit}>
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    fontSize: '1rem',
-                    boxSizing: 'border-box'
-                  }}
-                />
-              </div>
+          <article className="contact-card">
+            <h3>Send us a Message</h3>
+            <form onSubmit={handleSubmit} className="contact-form">
+              <label htmlFor="name">Name</label>
+              <input id="name" type="text" name="name" value={formData.name} onChange={handleChange} required />
 
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    fontSize: '1rem',
-                    boxSizing: 'border-box'
-                  }}
-                />
-              </div>
+              <label htmlFor="email">Email</label>
+              <input id="email" type="email" name="email" value={formData.email} onChange={handleChange} required />
 
-              <div style={{ marginBottom: '1rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    fontSize: '1rem',
-                    boxSizing: 'border-box'
-                  }}
-                />
-              </div>
+              <label htmlFor="subject">Subject</label>
+              <input id="subject" type="text" name="subject" value={formData.subject} onChange={handleChange} required />
 
-              <div style={{ marginBottom: '1.5rem' }}>
-                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    fontSize: '1rem',
-                    boxSizing: 'border-box',
-                    fontFamily: 'inherit'
-                  }}
-                />
-              </div>
+              <label htmlFor="message">Message</label>
+              <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={5} required />
 
-              <button
-                type="submit"
-                style={{
-                  background: '#003d82',
-                  color: 'white',
-                  padding: '0.75rem 1.5rem',
-                  border: 'none',
-                  borderRadius: '4px',
-                  fontSize: '1rem',
-                  fontWeight: 'bold',
-                  cursor: 'pointer',
-                  width: '100%'
-                }}
-              >
-                Send Message
-              </button>
+              <button type="submit">Send Message</button>
             </form>
-          </div>
-        </div>
+          </article>
+        </section>
 
-        {/* Map Section */}
-        <div style={{ marginBottom: '3rem' }}>
-          <h2 style={{ color: '#003d82', marginBottom: '1.5rem' }}>Visit Us</h2>
-          <div style={{
-            borderRadius: '8px',
-            overflow: 'hidden',
-            boxShadow: '0 4px 12px rgba(0, 61, 130, 0.1)',
-            height: '400px'
-          }}>
+        <section className="contact-map-wrap">
+          <h2>Visit Us</h2>
+          <div className="contact-map">
             <iframe
               title="CO-IN Symposia Location"
               width="100%"
               height="100%"
-              style={{ border: 'none' }}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567891234!2d-74.00601234567891!3d40.71234567891234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzU0LjQiTiA3NMOuMDAnMjguMyJX!5e0!3m2!1sen!2sus!4v1234567891234"
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <p style={{ color: '#666', marginTop: '1rem', fontSize: '0.95rem' }}>
-            📍 123 Innovation Street, Tech City, TC 12345 | Mon-Fri: 9AM-6PM | Sat: 10AM-4PM
+          <p className="contact-map-note">
+            123 Innovation Street, Tech City, TC 12345 | Mon-Fri: 9AM-6PM | Sat: 10AM-4PM
           </p>
-        </div>
+        </section>
 
-        {/* Additional Info */}
-        <div style={{
-          background: '#f8f9fa',
-          padding: '2rem',
-          borderRadius: '8px',
-          borderLeft: '4px solid #003d82'
-        }}>
-          <h3 style={{ color: '#003d82', marginBottom: '1rem' }}>FAQ</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+        <section className="contact-faq">
+          <h3>FAQ</h3>
+          <div className="contact-faq-grid">
             <div>
-              <h4 style={{ color: '#333', marginBottom: '0.5rem' }}>How long does it take to plan a conference?</h4>
-              <p style={{ color: '#666', fontSize: '0.95rem' }}>
-                Typically 3-6 months depending on the size and complexity of the event.
-              </p>
+              <h4>How long does it take to plan a conference?</h4>
+              <p>Typically 3-6 months depending on the size and complexity of the event.</p>
             </div>
             <div>
-              <h4 style={{ color: '#333', marginBottom: '0.5rem' }}>Do you offer virtual conference options?</h4>
-              <p style={{ color: '#666', fontSize: '0.95rem' }}>
-                Yes, we provide full virtual and hybrid conference solutions.
-              </p>
+              <h4>Do you offer virtual conference options?</h4>
+              <p>Yes, we provide full virtual and hybrid conference solutions.</p>
             </div>
             <div>
-              <h4 style={{ color: '#333', marginBottom: '0.5rem' }}>What is your cancellation policy?</h4>
-              <p style={{ color: '#666', fontSize: '0.95rem' }}>
-                Contact our team to discuss cancellation and refund policies.
-              </p>
+              <h4>What is your cancellation policy?</h4>
+              <p>Contact our team to discuss cancellation and refund policies.</p>
             </div>
             <div>
-              <h4 style={{ color: '#333', marginBottom: '0.5rem' }}>Do you handle sponsorships?</h4>
-              <p style={{ color: '#666', fontSize: '0.95rem' }}>
-                Yes, we manage all sponsorship and exhibition arrangements.
-              </p>
+              <h4>Do you handle sponsorships?</h4>
+              <p>Yes, we manage all sponsorship and exhibition arrangements.</p>
             </div>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

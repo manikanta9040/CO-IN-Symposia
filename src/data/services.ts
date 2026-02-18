@@ -15,27 +15,27 @@ export interface ServiceDetail {
 export const servicesData: Service[] = [
   {
     id: 1,
-    title: "Engineering Summits",
-    description: "Unleash innovation and connect with industry leaders at our Engineering Summit.",
-    icon: "🎓"
+    title: "Conference Services",
+    description: "Professional planning, abstract workflows, publication support, and participant management for science and engineering conferences.",
+    icon: "🗂️"
   },
   {
     id: 2,
-    title: "Science Symposia",
-    description: "Uncover groundbreaking research and collaborate with scientific pioneers. Ignite scientific discovery!",
-    icon: "🔬"
+    title: "Approach & Experience",
+    description: "Experienced coordination teams, structured delivery frameworks, and transparent operations from program design to post-event reporting.",
+    icon: "🧭"
   },
   {
     id: 3,
-    title: "Technology Conferences",
-    description: "Experience the future of technology. Network, learn, and innovate at our conference.",
-    icon: "💻"
+    title: "Global Education & Technology",
+    description: "Cross-border programs that connect academia, industry, and innovators to shape practical future-facing research communities.",
+    icon: "🌍"
   },
   {
     id: 4,
-    title: "Innovation Forums",
-    description: "Fuel your innovation. Transform your future. Join the ultimate platform for groundbreaking ideas.",
-    icon: "💡"
+    title: "Board & Scientific Leadership",
+    description: "Advisory board members and scientific mentors guiding quality, relevance, and long-term conference impact.",
+    icon: "👥"
   }
 ];
 

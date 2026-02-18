@@ -13,40 +13,46 @@ export interface Conference {
 export const conferencesData: Conference[] = [
   {
     id: 1,
-    title: "Engineering Summit 2024",
-    date: "March 15-17, 2024",
+    title: "CO-IN Global Science & Technology Summit 2026",
+    date: "August 18-20, 2026",
     location: "Austin, TX",
-    description: "Annual flagship event bringing together engineering leaders and innovators for three days of presentations, workshops, and networking.",
-    status: 'completed',
-    attendees: 500,
-    speakers: 50,
-    topics: ["AI & Machine Learning", "Sustainable Engineering", "Digital Transformation", "Innovation Management"]
+    description: "Flagship summit connecting research leaders, board members, and emerging innovators across core science and engineering disciplines.",
+    status: 'upcoming',
+    attendees: 900,
+    speakers: 80,
+    topics: ["Applied AI in Science", "Sustainable Engineering", "Research Integrity", "Global Collaboration"]
   },
   {
     id: 2,
-    title: "Science Symposia Series - Emerging Technologies",
-    date: "April 22-24, 2024",
-    location: "Virtual & Austin, TX",
-    description: "Exploring cutting-edge research in emerging technologies including quantum computing, biotechnology, and advanced materials.",
+    title: "International Symposium on Future Education & Technology",
+    date: "October 9-10, 2026",
+    location: "Virtual + Austin, TX",
+    description: "A focused symposium on the future of global education, digital pedagogy, and technology transfer between academia and industry.",
     status: 'upcoming',
-    topics: ["Quantum Computing", "Biotechnology", "Advanced Materials", "Renewable Energy"]
+    attendees: 650,
+    speakers: 45,
+    topics: ["Learning Technology", "Industry-Academia Partnerships", "Digital Curriculum", "EdTech Evaluation"]
   },
   {
     id: 3,
-    title: "Technology Innovation Forum 2024",
-    date: "June 10-12, 2024",
-    location: "San Francisco, CA",
-    description: "A premier forum for technology innovators to showcase breakthrough solutions and connect with potential partners.",
+    title: "Advanced Materials & Molecular Systems Conference",
+    date: "November 27-29, 2026",
+    location: "Singapore",
+    description: "Three-day conference dedicated to molecular systems, materials chemistry, and translational engineering applications.",
     status: 'upcoming',
-    topics: ["FinTech", "HealthTech", "EdTech", "CleanTech"]
+    attendees: 500,
+    speakers: 55,
+    topics: ["Molecular Systems", "Catalysis", "Materials Design", "Industrial Applications"]
   },
   {
     id: 4,
-    title: "Global Engineering Collaboration Summit",
-    date: "September 8-10, 2024",
-    location: "London, UK",
-    description: "International summit focused on global engineering collaboration and cross-cultural innovation partnerships.",
-    status: 'upcoming',
-    topics: ["Global Innovation", "Cross-cultural Collaboration", "International Standards", "Technology Transfer"]
+    title: "Annual Board & Advisors Strategy Colloquium",
+    date: "December 12, 2025",
+    location: "Austin, TX",
+    description: "Internal strategic colloquium where board members review outcomes, publication quality, and roadmap priorities.",
+    status: 'completed',
+    attendees: 120,
+    speakers: 22,
+    topics: ["Program Quality", "Peer Review Standards", "Operational Scale", "2026 Roadmap"]
   }
 ];

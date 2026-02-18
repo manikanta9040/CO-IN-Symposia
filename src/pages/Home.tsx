@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import About from '../components/About';
-import Features from '../components/Features';
-import Team from '../components/Team';
-import LatestUpdates from '../components/LatestUpdates';
-import CTA from '../components/CTA';
-import Footer from '../components/Footer';
-import '../styles/globals.css';
+import Header from '../components/layout/Header';
+import Hero from '../components/home/Hero';
+import Services from '../components/home/Services';
+import About from '../components/home/About';
+import Features from '../components/home/Features';
+import Team from '../components/home/Team';
+import LatestUpdates from '../components/home/LatestUpdates';
+import CTA from '../components/home/CTA';
+import Footer from '../components/layout/Footer';
 
 const Home: React.FC = () => {
   useEffect(() => {
-    document.title = 'CO-IN Symposia | Collaborate & Innovate';
+    document.title = 'CO-IN Symposia | Science & Technology Conferences';
   }, []);
 
   return (

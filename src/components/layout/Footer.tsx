@@ -1,6 +1,5 @@
 import React from 'react';
-import { contentData } from '../data/content';
-import '../styles/Footer.css';
+import { contentData } from '../../data/content';
 
 const Footer: React.FC = () => {
   return (

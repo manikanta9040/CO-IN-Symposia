@@ -26,32 +26,32 @@ export interface ContentData {
 
 export const contentData: ContentData = {
   hero: {
-    title: "Collaborate & Innovate",
-    subtitle: "CO-IN Symposia establishes dynamic platforms across various engineering and science disciplines, bringing together like-minded individuals and experts for knowledge exchange, partnership building, and mutual support."
+    title: "International Conferences For Science And Technology",
+    subtitle: "CO-IN Symposia creates focused platforms for conference services, approach and experience, and future-facing education and technology collaboration."
   },
   about: {
     title: "About CO-IN Symposia",
-    description: "CO-IN Symposia establishes dynamic platforms across various engineering and science disciplines, bringing together like-minded individuals and experts for knowledge exchange, partnership building, and mutual support.",
-    mission: "To foster innovation and collaboration in engineering and science through professional symposiums, conferences, and networking events that advance knowledge and drive technological progress.",
+    description: "CO-IN Symposia establishes dynamic platforms across engineering and science disciplines, bringing together experts and collaborators for knowledge exchange, partnerships, and mutual support.",
+    mission: "To advance international research dialogue through professionally managed conferences, strong scientific leadership, and inclusive global collaboration.",
     whatWeDo: [
-      "Organize Engineering Summits for industry leaders and innovators",
-      "Host Science Symposia for researchers and scientific pioneers",
-      "Provide comprehensive conference management services",
-      "Facilitate networking and collaboration opportunities",
-      "Support both in-person and virtual event formats"
+      "Deliver end-to-end conference services, from abstract handling to event delivery",
+      "Build high-impact scientific programs with trusted advisory experts",
+      "Support in-person, virtual, and hybrid conference formats",
+      "Grow global education and technology communities through recurring events",
+      "Provide publication, reporting, and post-conference continuity support"
     ],
-    commitment: "We are committed to creating professional, engaging, and customized experiences that meet the specific needs of the scientific and engineering communities. Our services ensure smooth, seamless experiences for all participants."
+    commitment: "We are committed to creating professional and customized conference experiences that meet the needs of scientific communities while staying practical, transparent, and globally accessible."
   },
   footer: {
     address: {
       company: "CO-IN Symposia LLC",
-      street: "5900 Balcones Dr Suit 100",
-      city: "Austin, TX 78731"
+      street: "5900 Balcones Dr STE 100",
+      city: "Austin, TX 78731, USA"
     },
     contact: {
-      email: "info@coinsymposia.com",
+      email: "info@coinsymposia.org",
       phone: "+1 512 270 2990"
     },
-    copyright: "2024 © COIN SYMPOSIA LLC, All right reserved."
+    copyright: "2026 © CO-IN SYMPOSIA LLC. All rights reserved."
   }
 };

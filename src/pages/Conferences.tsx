@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 import { conferencesData } from '../data/conferences';
-import '../styles/globals.css';
 
 const Conferences: React.FC = () => {
   useEffect(() => {

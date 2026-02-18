@@ -13,56 +13,56 @@ export interface NewsItem {
 export const newsData: NewsItem[] = [
   {
     id: 1,
-    title: "Engineering Summit 2024: Record Attendance",
-    date: "February 15, 2024",
-    summary: "Our annual Engineering Summit brought together over 500 industry leaders and innovators for three days of groundbreaking presentations and networking.",
-    category: 'event',
+    title: "Global Summit 2026 Theme Announced",
+    date: "January 30, 2026",
+    summary: "CO-IN Symposia announced the 2026 summit theme focused on practical AI in science, translational research, and sustainable engineering systems.",
+    category: 'announcement',
     featured: true,
-    tags: ['engineering', 'summit', 'record', 'attendance']
+    tags: ['global-summit', '2026', 'theme', 'ai']
   },
   {
     id: 2,
-    title: "New Science Symposia Series Announced",
-    date: "January 20, 2024",
-    summary: "CO-IN Symposia launches a new series of science symposia focused on emerging technologies and interdisciplinary research collaborations.",
+    title: "Board Members Meet on Program Quality Framework",
+    date: "December 12, 2025",
+    summary: "Board members and scientific advisors aligned on a new framework for reviewer quality, speaker diversity, and publication integrity across upcoming events.",
     category: 'announcement',
     featured: true,
-    tags: ['science', 'symposia', 'emerging', 'technologies']
+    tags: ['board', 'quality', 'program', 'review']
   },
   {
     id: 3,
-    title: "Virtual Conference Platform Enhanced",
-    date: "December 10, 2023",
-    summary: "We've upgraded our virtual conference platform with new interactive features and improved accessibility for global participants.",
+    title: "Proceedings Support Expanded For Partner Conferences",
+    date: "October 18, 2025",
+    summary: "CO-IN expanded editorial and proceedings support for partner conferences, including formatting standards and indexing-ready delivery workflows.",
     category: 'achievement',
-    featured: false,
-    tags: ['virtual', 'platform', 'enhancement', 'accessibility']
+    featured: true,
+    tags: ['proceedings', 'publication', 'partners', 'editorial']
   },
   {
     id: 4,
-    title: "Partnership with Leading Research Institutions",
-    date: "November 28, 2023",
-    summary: "CO-IN Symposia announces strategic partnerships with top research institutions to expand our conference offerings and research collaborations.",
+    title: "Hybrid Conference Delivery Stack Upgraded",
+    date: "September 5, 2025",
+    summary: "A new hybrid event stack now supports live interpretation, session recording pipelines, and improved attendee interaction tracking.",
     category: 'partnership',
-    featured: true,
-    tags: ['partnership', 'research', 'institutions', 'collaboration']
+    featured: false,
+    tags: ['hybrid', 'platform', 'conference-tech', 'delivery']
   },
   {
     id: 5,
-    title: "Award-Winning Research Presented at Recent Conference",
-    date: "October 15, 2023",
-    summary: "Several groundbreaking research papers presented at our recent biotechnology conference received international recognition and awards.",
-    category: 'achievement',
+    title: "International Reviewer Pool Crosses 40 Countries",
+    date: "July 14, 2025",
+    summary: "CO-IN now coordinates reviewers and session experts across 40+ countries to support broader and stronger peer feedback.",
+    category: 'event',
     featured: false,
-    tags: ['awards', 'research', 'biotechnology', 'conference']
+    tags: ['reviewers', 'international', 'peer-review', 'quality']
   },
   {
     id: 6,
-    title: "New Online Learning Platform Launched",
-    date: "September 22, 2023",
-    summary: "CO-IN Symposia introduces an innovative online learning platform offering recorded sessions, webinars, and interactive workshops.",
+    title: "Partner Universities Launch Co-Branded Symposium Track",
+    date: "May 2, 2025",
+    summary: "New university collaborations introduced co-branded symposium tracks focused on applied science and advanced technology transfer.",
     category: 'announcement',
     featured: false,
-    tags: ['online', 'learning', 'platform', 'webinars']
+    tags: ['universities', 'partnership', 'symposium', 'education']
   }
 ];
