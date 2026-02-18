@@ -9,6 +9,7 @@ export interface ServiceDetail {
   id: number;
   title: string;
   description: string;
+  details?: string[];
 }
 
 export const servicesData: Service[] = [
@@ -42,56 +43,131 @@ export const detailedServicesData: ServiceDetail[] = [
   {
     id: 1,
     title: "Abstract Management",
-    description: "Online Submission Platforms: A user-friendly system for researchers to submit abstracts, papers, or posters for peer review. Peer Review Process: Coordination of the review process, where submissions are evaluated by a panel of experts for quality and relevance. Notifications and Revisions: Communicating acceptance or rejection of abstracts and managing revisions or edits as needed."
+    description: "Comprehensive abstract submission and review management system ensuring quality and relevance.",
+    details: [
+      "Online Submission Platforms: A user-friendly system for researchers to submit abstracts, papers, or posters for peer review.",
+      "Peer Review Process: Coordination of the review process, where submissions are evaluated by a panel of experts for quality and relevance.",
+      "Notifications and Revisions: Communicating acceptance or rejection of abstracts and managing revisions or edits as needed."
+    ]
   },
   {
     id: 2,
     title: "Program Development and Scheduling",
-    description: "Detailed program development and scheduling services for conferences."
+    description: "Strategic development of conference programs with optimal scheduling for maximum engagement.",
+    details: [
+      "Keynote Speaker Coordination: Identifying and coordinating with renowned speakers.",
+      "Session Planning and Organization: Organizing thematic sessions and workshops.",
+      "Conflict-Free Scheduling: Creating schedules that optimize attendee participation.",
+      "Interactive Workshop Management: Designing and managing interactive workshop sessions.",
+      "Networking Event Design: Planning social and networking events throughout conference."
+    ]
   },
   {
     id: 3,
     title: "Proceedings and Publications",
-    description: "Professional proceedings and publication management services."
+    description: "Professional management of conference proceedings and publication processes.",
+    details: [
+      "Manuscript Collection and Organization: Gathering and organizing all accepted papers and presentations.",
+      "Peer Review Coordination: Managing the review process for published content.",
+      "Publication Formatting and Editing: Ensuring professional formatting and editorial quality.",
+      "ISBN and ISSN Registration: Handling all necessary registration for published proceedings.",
+      "Digital and Print Distribution: Managing both digital archives and printed copies."
+    ]
   },
   {
     id: 4,
     title: "Technical and Logistical Support",
-    description: "Comprehensive technical and logistical support for events."
+    description: "Comprehensive technical infrastructure and logistical support for seamless event execution.",
+    details: [
+      "Venue Selection and Management: Finding and managing appropriate conference venues.",
+      "Audio-Visual Equipment Setup: Professional AV equipment installation and management.",
+      "Registration Systems: Implementing efficient on-site check-in systems.",
+      "On-Site Tech Support Staff: Providing technical assistance throughout the event.",
+      "Emergency Response Planning: Preparing contingency plans for technical issues."
+    ]
   },
   {
     id: 5,
     title: "Virtual and Hybrid Conference Support",
-    description: "Full support for virtual and hybrid conference formats."
+    description: "Full support for virtual, hybrid, and in-person conference formats.",
+    details: [
+      "Platform Selection and Setup: Choosing and configuring appropriate digital platforms.",
+      "Camera and Streaming Management: Professional streaming of sessions and keynotes.",
+      "Virtual Attendance Tools: Providing interactive features for virtual participants.",
+      "Recording and Archival Services: Capturing and managing all session recordings.",
+      "Global Audience Engagement Features: Enabling meaningful participation across time zones."
+    ]
   },
   {
     id: 6,
     title: "Networking and Collaboration Opportunities",
-    description: "Facilitating networking and collaboration among participants."
+    description: "Facilitation of meaningful connections among conference participants.",
+    details: [
+      "Networking Event Organization: Hosting structured networking sessions and mixers.",
+      "Speed Networking Sessions: Facilitating rapid one-on-one connections.",
+      "Digital Networking Platforms: Providing tools for online collaboration and connection.",
+      "AI-Powered Matchmaking: Using technology to suggest meaningful connections.",
+      "Post-Conference Networking Tools: Maintaining connections after the event ends."
+    ]
   },
   {
     id: 7,
     title: "Sponsorship and Exhibition Management",
-    description: "Managing sponsorships and exhibitions for conferences."
+    description: "Complete management of sponsorship and exhibition arrangements.",
+    details: [
+      "Sponsor Recruitment and Relations: Identifying and cultivating sponsor relationships.",
+      "Booth Design and Setup: Creating attractive and functional exhibition spaces.",
+      "Exhibition Floor Management: Coordinating logistics of the exhibition area.",
+      "Sponsor Recognition Planning: Ensuring appropriate visibility and recognition.",
+      "ROI Tracking for Sponsors: Providing metrics on sponsorship effectiveness."
+    ]
   },
   {
     id: 8,
     title: "Registration and Participant Management",
-    description: "Streamlined registration and participant management systems."
+    description: "Streamlined registration systems for efficient participant management.",
+    details: [
+      "Online Registration Platform: User-friendly registration system with multiple tiers.",
+      "Ticket Management: Handling various ticket types and pricing structures.",
+      "Payment Processing: Secure payment integration and transaction management.",
+      "Attendee Check-In Systems: Fast and efficient on-site registration.",
+      "Badge Printing and Distribution: Professional attendee badge creation."
+    ]
   },
   {
     id: 9,
     title: "Accreditation and Certifications",
-    description: "Accreditation and certification services for conferences."
+    description: "Management of professional accreditation and certification programs.",
+    details: [
+      "CE Credit Coordination: Managing Continuing Education credit requirements.",
+      "CME Accreditation Management: Facilitating medical education accreditation.",
+      "Certificate Design and Issuance: Creating professional certificates of completion.",
+      "Regulatory Compliance: Ensuring all accreditation standards are met.",
+      "Accreditation Documentation: Managing all necessary accreditation paperwork."
+    ]
   },
   {
     id: 10,
     title: "Marketing and Promotion",
-    description: "Marketing and promotional services to attract attendees."
+    description: "Comprehensive marketing strategies to promote conference and attract attendees.",
+    details: [
+      "Social Media Campaign Management: Strategic use of social platforms for promotion.",
+      "Email Marketing Automation: Targeted email campaigns to drive registrations.",
+      "Website Development and Management: Creating compelling conference websites.",
+      "Press Release and Media Relations: Generating media coverage and publicity.",
+      "Promotional Material Design: Creating professional marketing collateral."
+    ]
   },
   {
     id: 11,
     title: "Post-Conference Services",
-    description: "Post-conference support and follow-up services."
+    description: "Professional support after the conference concludes.",
+    details: [
+      "Feedback and Survey Analysis: Collecting and analyzing attendee feedback.",
+      "Report Generation and Insights: Providing comprehensive post-conference reports.",
+      "Content Distribution and Archival: Making presentations and materials available.",
+      "Follow-Up Communication: Maintaining engagement with attendees post-event.",
+      "Planning for Next Conference: Learning and improvements for future events."
+    ]
   }
 ];

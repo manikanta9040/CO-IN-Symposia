@@ -12,28 +12,92 @@ const About: React.FC = () => {
   return (
     <div className="app">
       <Header />
-      <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '800px', margin: '0 auto' }}>
-        <h1>{contentData.about.title}</h1>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2rem', color: '#666' }}>
-          {contentData.about.description}
-        </p>
+      <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '900px', margin: '0 auto', marginTop: '80px' }}>
+        <h1 style={{ color: '#003d82', marginBottom: '2rem' }}>About CO-IN Symposia</h1>
 
-        <h2>Our Mission</h2>
-        <p style={{ marginBottom: '2rem', lineHeight: '1.6' }}>
-          {contentData.about.mission}
-        </p>
+        {/* About Section */}
+        <section style={{ marginBottom: '3rem' }}>
+          <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Who We Are</h2>
+          <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem', color: '#666' }}>
+            {contentData.about.description}
+          </p>
+        </section>
 
-        <h2>What We Do</h2>
-        <ul style={{ lineHeight: '1.8', marginBottom: '2rem' }}>
-          {contentData.about.whatWeDo.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        {/* Aim Section */}
+        <section style={{ marginBottom: '3rem', background: '#f8f9fa', padding: '2rem', borderRadius: '8px' }}>
+          <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Our Aim</h2>
+          <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#666' }}>
+            {contentData.about.mission}
+          </p>
+        </section>
 
-        <h2>Our Commitment</h2>
-        <p style={{ lineHeight: '1.6' }}>
-          {contentData.about.commitment}
-        </p>
+        {/* We Serve Section */}
+        <section style={{ marginBottom: '3rem' }}>
+          <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Who We Serve</h2>
+          <div style={{ display: 'grid', gap: '1.5rem' }}>
+            {contentData.about.whatWeDo.map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  background: 'white',
+                  padding: '1.5rem',
+                  borderLeft: '4px solid #00a9ac',
+                  borderRadius: '4px',
+                  boxShadow: '0 2px 8px rgba(0, 61, 130, 0.05)'
+                }}
+              >
+                <p style={{ fontSize: '1rem', lineHeight: '1.7', color: '#666' }}>
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* What We Do Section */}
+        <section style={{ marginBottom: '3rem', background: '#f8f9fa', padding: '2rem', borderRadius: '8px' }}>
+          <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Our Commitment</h2>
+          <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#666' }}>
+            {contentData.about.commitment}
+          </p>
+        </section>
+
+        {/* Key Values */}
+        <section>
+          <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Why Choose Us</h2>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gap: '1.5rem'
+          }}>
+            {[
+              { title: 'Expert Team', desc: 'Experienced professionals dedicated to conference excellence' },
+              { title: 'Global Network', desc: 'Connected with leaders and experts worldwide' },
+              { title: 'Technical Excellence', desc: 'State-of-the-art technology and infrastructure' },
+              { title: 'Customized Solutions', desc: 'Tailored services meeting specific needs' },
+              { title: 'End-to-End Management', desc: 'Complete conference organization from concept to execution' },
+              { title: '24/7 Support', desc: 'Dedicated support throughout the event lifecycle' }
+            ].map((value, index) => (
+              <div
+                key={index}
+                style={{
+                  background: 'white',
+                  padding: '1.5rem',
+                  borderRadius: '8px',
+                  border: '2px solid #e0e0e0',
+                  boxShadow: '0 2px 8px rgba(0, 61, 130, 0.05)'
+                }}
+              >
+                <h3 style={{ color: '#003d82', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
+                  {value.title}
+                </h3>
+                <p style={{ color: '#666', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                  {value.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

@@ -2,80 +2,86 @@ export interface Professor {
   id: number;
   name: string;
   title: string;
-  institution: string;
-  department: string;
-  expertise: string[];
+  affiliation: string;
+  role: string;
   bio: string;
-  image?: string;
-  publications?: number;
-  conferences?: number;
+  email?: string;
 }
 
 export const professorsData: Professor[] = [
   {
     id: 1,
-    name: "Dr. Sarah Chen",
-    title: "Professor of Computer Science",
-    institution: "Stanford University",
-    department: "Computer Science",
-    expertise: ["Artificial Intelligence", "Machine Learning", "Computer Vision"],
-    bio: "Dr. Chen is a leading researcher in AI and machine learning with over 15 years of experience. She has published more than 200 papers and holds several patents in computer vision technology.",
-    publications: 200,
-    conferences: 45
+    name: 'Prof. William Andrew Goddard III',
+    title: 'Charles and Mary Ferkel Professor',
+    affiliation: 'Caltech, Pasadena, CA',
+    role: 'President',
+    bio: 'Prof. William A. Goddard III is a distinguished chemist and materials scientist at Caltech. He is a member of both the International Academy of Quantum Molecular Science and the U.S. National Academy of Sciences. Prof. Goddard\'s research has been widely recognized, as evidenced by his H index of 191.',
+    email: 'wgoddard@coinsymposia.org'
   },
   {
     id: 2,
-    name: "Dr. Michael Rodriguez",
-    title: "Associate Professor of Mechanical Engineering",
-    institution: "MIT",
-    department: "Mechanical Engineering",
-    expertise: ["Sustainable Energy", "Advanced Materials", "Robotics"],
-    bio: "Dr. Rodriguez specializes in sustainable energy solutions and advanced materials research. He leads multiple research projects funded by NSF and DOE.",
-    publications: 150,
-    conferences: 38
+    name: 'Prof. Debbie C. Crans',
+    title: 'Professor of Chemistry',
+    affiliation: 'Colorado State University, Fort Collins, CO',
+    role: 'Vice President',
+    bio: 'Prof. Debbie C. Crans is a distinguished chemist at Colorado State University. She has received numerous awards, including the ACS Award for Distinguished Service and the Arthur P. Cope Scholar award. Her research focuses on the chemistry of transition metals and their biological applications.',
+    email: 'dcrans@coinsymposia.org'
   },
   {
     id: 3,
-    name: "Dr. Emily Watson",
-    title: "Professor of Biotechnology",
-    institution: "Harvard University",
-    department: "Molecular Biology",
-    expertise: ["Genetic Engineering", "Biomedical Research", "Drug Development"],
-    bio: "Dr. Watson is a pioneer in biotechnology research with groundbreaking work in genetic engineering. Her research has led to several FDA-approved treatments.",
-    publications: 180,
-    conferences: 52
+    name: 'Prof. Mannar R Maurya',
+    title: 'Professor and Dean of Faculty Affairs',
+    affiliation: 'Indian Institute of Technology Roorkee, India',
+    role: 'General Secretary',
+    bio: 'Prof. Mannar Ram Maurya is a Professor of Inorganic Chemistry at IIT Roorkee, India. He has led the Chemistry department and served as Dean. His research focuses on vanadium enzymes, catalyst development, and reaction mechanisms. He has published over 190 papers (cited over 7,000 times).',
+    email: 'mmaurya@coinsymposia.org'
   },
   {
     id: 4,
-    name: "Dr. James Park",
-    title: "Professor of Electrical Engineering",
-    institution: "UC Berkeley",
-    department: "Electrical Engineering",
-    expertise: ["Semiconductor Technology", "Quantum Computing", "Nanotechnology"],
-    bio: "Dr. Park is an expert in semiconductor technology and quantum computing. He has been instrumental in developing next-generation computing technologies.",
-    publications: 170,
-    conferences: 41
+    name: 'Prof. Charles Edward Sprouse III',
+    title: 'Associate Professor of Engineering',
+    affiliation: 'Benedictine College, Atchison, KS',
+    role: 'Member',
+    bio: 'Prof. Charles Sprouse III is an Associate Professor of Engineering at Benedictine College. He specializes in power generation and emissions reduction, using computational modeling to improve environmental stewardship. His research has been published and presented widely, covering topics like diesel filters and waste heat recovery.'
   },
   {
     id: 5,
-    name: "Dr. Lisa Thompson",
-    title: "Professor of Environmental Science",
-    institution: "University of Texas at Austin",
-    department: "Environmental Science",
-    expertise: ["Climate Change", "Sustainable Development", "Environmental Policy"],
-    bio: "Dr. Thompson is a leading voice in environmental science and climate change research. She advises governments and organizations on sustainable development policies.",
-    publications: 140,
-    conferences: 35
+    name: 'Prof. Debasish Kuila',
+    title: 'Professor of Materials Science',
+    affiliation: 'North Carolina A&T State University, CA',
+    role: 'Member',
+    bio: 'Prof. Debasish Kuila is a leading researcher in bioenergy and materials science at North Carolina A&T State University. His research interests include biomaterials, cell biology, drug toxicity screening, and catalysis. He is a recipient of the ChemCon Distinguished Speaker Award.'
   },
   {
     id: 6,
-    name: "Dr. David Kim",
-    title: "Professor of Physics",
-    institution: "Caltech",
-    department: "Physics",
-    expertise: ["Quantum Physics", "Particle Physics", "Theoretical Physics"],
-    bio: "Dr. Kim is a theoretical physicist working on quantum field theory and particle physics. His work has contributed to our understanding of fundamental particles.",
-    publications: 160,
-    conferences: 48
+    name: 'Prof. Nikolaos Dimakis',
+    title: 'Professor of Physics',
+    affiliation: 'University of Texas Rio Grande Valley, Edinburg, TX',
+    role: 'Member',
+    bio: 'Prof. Nikolaos Dimakis earned his MS in Applied Optics and PhD in Physics from the University of Salford and IIT, respectively. He has held research positions at Argonne National Laboratory and IIT before joining the University of Texas-Pan American in 2004.'
+  },
+  {
+    id: 7,
+    name: 'Prof. V.S.R. Rajasekhar Pullabhotla',
+    title: 'Professor of Chemistry',
+    affiliation: 'University of Zululand, South Africa',
+    role: 'Member',
+    bio: 'Prof. Pullabhotla is Full Professor in the Department of Chemistry and principal investigator of the Catalysis Research Group at University of Zululand. He has 2 registered Patents and co-authored 66 publications. He has emerged as a C2 rated Scientist by National Research Foundation (NRF), South Africa.'
+  },
+  {
+    id: 8,
+    name: 'Prof. Nataša Novak Tušar',
+    title: 'Head of Laboratory for Catalysts',
+    affiliation: 'National Institute of Chemistry, Slovenia',
+    role: 'Member',
+    bio: 'Prof. Nataša Novak Tušar is Head of the Laboratory for catalysts, Department of Inorganic Chemistry and Technology, National Institute of Chemistry, Ljubljana, Slovenia. She has Twenty five years of experience in research working on a world-wide basis.'
+  },
+  {
+    id: 9,
+    name: 'Bhaskar Peddeti',
+    title: 'Tech Lead - Manufacturing & IT Systems',
+    affiliation: 'Sweden',
+    role: 'Member',
+    bio: 'Bhaskar Peddeti combines a strong background in manufacturing with a passion for system innovation. He has led major initiatives in PLM, PIM, and digital transformation. His work in product design and field service has helped streamline processes across global teams.'
   }
 ];
