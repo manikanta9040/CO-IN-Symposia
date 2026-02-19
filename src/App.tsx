@@ -5,8 +5,10 @@ import Contact from './pages/Contact';
 import Home from './pages/Home';
 import News from './pages/News';
 import NotFound from './pages/NotFound';
+import Privacy from './pages/Privacy';
 import Reports from './pages/Reports';
 import Services from './pages/Services';
+import Terms from './pages/Terms';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/reports" element={<Reports />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

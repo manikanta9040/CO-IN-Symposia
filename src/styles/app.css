@@ -1,6 +1,5 @@
-/* ========================================================================== */
-/* Global                                                                       */
-/* ========================================================================== */
+
+/* Global */
 * {
   margin: 0;
   padding: 0;
@@ -8,15 +7,20 @@
 }
 
 :root {
-  --primary-color: #003d82;
-  --primary-dark: #002d5f;
-  --primary-light: #0052a3;
-  --accent-color: #00a9ac;
-  --accent-light: #00d4d7;
-  --text-dark: #1a1a1a;
-  --text-light: #666;
-  --bg-light: #f8fafb;
-  --border-color: #e0e0e0;
+  --color-sunflower: #EDA909;
+  --color-sky: #8CE0EB;
+  --color-sage: #73926C;
+  --color-sand: #D2CCB1;
+
+  --primary-color: var(--color-sunflower);
+  --primary-dark: var(--color-sage);
+  --primary-light: var(--color-sky);
+  --accent-color: var(--color-sky);
+  --accent-light: var(--color-sand);
+  --text-dark: #263329;
+  --text-light: #576456;
+  --bg-light: #f4f0e2;
+  --border-color: #d7d1bd;
 }
 
 body {
@@ -54,14 +58,14 @@ main h1 {
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 61, 130, 0.3);
+  box-shadow: 0 4px 15px rgba(115, 146, 108, 0.3);
   transition: all 0.3s;
 }
 
 .scroll-top:hover {
   background-color: var(--accent-color);
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 169, 172, 0.4);
+  box-shadow: 0 6px 20px rgba(140, 224, 235, 0.4);
 }
 
 h1,
@@ -150,7 +154,7 @@ button:hover {
 /* ========================================================================== */
 .header {
   background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 61, 130, 0.08);
+  box-shadow: 0 2px 8px rgba(115, 146, 108, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -204,11 +208,16 @@ button:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.72rem;
   color: var(--primary-color);
   font-weight: 700;
-  text-transform: lowercase;
   background: #fff;
+}
+
+.social-links a svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  fill: currentColor;
 }
 
 .social-links a:hover {
@@ -399,7 +408,7 @@ button:hover {
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid var(--border-color);
-  box-shadow: 0 2px 8px rgba(0, 61, 130, 0.05);
+  box-shadow: 0 2px 8px rgba(115, 146, 108, 0.05);
   position: relative;
   overflow: hidden;
 }
@@ -416,7 +425,7 @@ button:hover {
 
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 61, 130, 0.15);
+  box-shadow: 0 8px 20px rgba(115, 146, 108, 0.15);
   border-color: var(--primary-color);
 }
 
@@ -472,7 +481,7 @@ button:hover {
 }
 
 .home-section-title {
-  color: #003d82;
+  color: #73926C;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -517,7 +526,7 @@ button:hover {
 }
 
 .home-panel-title {
-  color: #003d82;
+  color: #73926C;
   margin-bottom: 1.25rem;
 }
 
@@ -537,7 +546,7 @@ button:hover {
 
 .about-stat-value {
   margin: 0;
-  color: #00a9ac;
+  color: #8CE0EB;
   font-size: 1.7rem;
   font-weight: 700;
 }
@@ -559,19 +568,19 @@ button:hover {
   border: 1px solid #dde5ed;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 3px 10px rgba(0, 61, 130, 0.05);
+  box-shadow: 0 3px 10px rgba(115, 146, 108, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .home-card:hover {
   transform: translateY(-4px);
-  border-color: #003d82;
-  box-shadow: 0 8px 18px rgba(0, 61, 130, 0.13);
+  border-color: #73926C;
+  box-shadow: 0 8px 18px rgba(115, 146, 108, 0.13);
 }
 
 .home-card h3 {
   margin: 0.25rem 0 0.55rem;
-  color: #003d82;
+  color: #73926C;
   font-size: 1.08rem;
 }
 
@@ -593,7 +602,7 @@ button:hover {
 
 .role-badge {
   display: inline-block;
-  background: #003d82;
+  background: #73926C;
   color: #fff;
   border-radius: 999px;
   font-size: 0.72rem;
@@ -603,7 +612,7 @@ button:hover {
 }
 
 .board-title {
-  color: #00a9ac;
+  color: #8CE0EB;
   font-weight: 600;
   margin-bottom: 0.2rem;
 }
@@ -614,13 +623,13 @@ button:hover {
 }
 
 .board-email-link {
-  color: #003d82;
+  color: #73926C;
   font-weight: 700;
   text-decoration: none;
 }
 
 .board-email-link:hover {
-  color: #00a9ac;
+  color: #8CE0EB;
 }
 
 .news-card {
@@ -629,7 +638,7 @@ button:hover {
 
 .news-category {
   display: inline-block;
-  background: #003d82;
+  background: #73926C;
   color: #fff;
   border-radius: 6px;
   font-size: 0.72rem;
@@ -650,7 +659,7 @@ button:hover {
 
 .cta-section {
   padding: 4.5rem 2rem;
-  background: linear-gradient(135deg, #003d82 0%, #0052a3 100%);
+  background: linear-gradient(135deg, #73926C 0%, #8CE0EB 100%);
   color: #fff;
   text-align: center;
 }
@@ -688,7 +697,7 @@ button:hover {
 }
 
 .primary-button {
-  background: #00a9ac;
+  background: #8CE0EB;
   color: #fff;
 }
 
@@ -705,7 +714,7 @@ button:hover {
 
 .secondary-button:hover {
   background: #fff;
-  color: #003d82;
+  color: #73926C;
   transform: translateY(-2px);
 }
 
@@ -739,11 +748,11 @@ button:hover {
   border: 1px solid #dfe6ee;
   border-radius: 14px;
   padding: 1.7rem;
-  box-shadow: 0 3px 12px rgba(0, 61, 130, 0.07);
+  box-shadow: 0 3px 12px rgba(115, 146, 108, 0.07);
 }
 
 .contact-card h3 {
-  color: #003d82;
+  color: #73926C;
   margin-bottom: 1.2rem;
 }
 
@@ -804,7 +813,7 @@ button:hover {
   overflow: hidden;
   border-radius: 14px;
   border: 1px solid #dfe6ee;
-  box-shadow: 0 4px 14px rgba(0, 61, 130, 0.08);
+  box-shadow: 0 4px 14px rgba(115, 146, 108, 0.08);
 }
 
 .contact-map iframe {
@@ -876,6 +885,19 @@ button:hover {
   line-height: 1.8;
 }
 
+.footer-contact-link {
+  display: block;
+  color: #b3bcc6;
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+  text-decoration: none;
+}
+
+.footer-contact-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
 .subscribe-form {
   display: flex;
   gap: 0.5rem;
@@ -902,7 +924,7 @@ button:hover {
 }
 
 .subscribe-form button:hover {
-  background: #00d4d7;
+  background: #D2CCB1;
   transform: translateY(-2px);
 }
 
@@ -927,6 +949,36 @@ button:hover {
 
 .footer-bottom a:hover {
   text-decoration: underline;
+}
+
+.footer-social-links {
+  margin-top: 1rem;
+}
+
+.footer-social-links a {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.footer-social-links a:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.legal-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.legal-page h1 {
+  margin-bottom: 1.5rem;
+}
+
+.legal-page p {
+  margin-bottom: 1rem;
 }
 
 /* ========================================================================== */

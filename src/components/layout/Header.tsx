@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import SocialLinks from './SocialLinks';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,12 +28,7 @@ const Header: React.FC = () => {
             <a href="mailto:info@coinsymposia.com" className="topbar-item">✉ info@coinsymposia.com</a>
           </div>
           <div className="header-topbar-right">
-            <div className="social-links" aria-label="Social links">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="Twitter">t</a>
-              <a href="#" aria-label="Instagram">ig</a>
-              <a href="#" aria-label="LinkedIn">in</a>
-            </div>
+            <SocialLinks />
             <span className="topbar-separator" aria-hidden="true">|</span>
             <button type="button" className="language-btn">English ▾</button>
           </div>
