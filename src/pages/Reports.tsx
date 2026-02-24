@@ -1,12 +1,38 @@
 import React, { useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import { reportsData } from '../data/reports';
+import { useSiteData } from '../hooks/useSiteData';
 
 const Reports: React.FC = () => {
+  const { data: reportsData, loading, error } = useSiteData((siteData) => siteData.reports);
+
   useEffect(() => {
     document.title = 'Reports & Publications | CO-IN Symposia';
   }, []);
+
+  if (loading) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>Loading...</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error || !reportsData) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>Reports unavailable</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="app">

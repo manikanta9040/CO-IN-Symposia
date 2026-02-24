@@ -1093,3 +1093,82 @@ button:hover {
     padding: 1.2rem;
   }
 }
+
+/* ========================================================================== */
+/* Admin                                                                        */
+/* ========================================================================== */
+.admin-page {
+  padding: 2.5rem 1.25rem;
+}
+
+.admin-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #dce3eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(36, 56, 80, 0.08);
+}
+
+.admin-status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2f4a66;
+  background: #e9eef5;
+}
+
+.admin-badge.is-active {
+  color: #0c6b31;
+  background: #ddf6e6;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.secondary-button {
+  border: 1px solid #b7c4d5;
+  background: #fff;
+  color: #243850;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+}
+
+.admin-editor {
+  width: 100%;
+  min-height: 500px;
+  border: 1px solid #c8d3e1;
+  border-radius: 10px;
+  padding: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  background: #fbfcfe;
+  color: #102033;
+}
+
+.admin-message {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.admin-error {
+  color: #b42318;
+  font-weight: 600;
+}

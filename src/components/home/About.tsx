@@ -1,39 +1,29 @@
 import React from 'react';
-
-const aboutHighlights = [
-  'End-to-end services from abstracts to proceedings',
-  'Experienced board-guided scientific curation',
-  'Strong global reviewer and speaker network',
-  'In-person, hybrid, and virtual delivery expertise'
-];
-
-const impactStats = [
-  { value: '25+', label: 'Programs Delivered' },
-  { value: '40+', label: 'Countries In Network' },
-  { value: '1,500+', label: 'Researchers Engaged' },
-  { value: '100%', label: 'Program Accountability' }
-];
+import { useSiteData } from '../../hooks/useSiteData';
 
 const About: React.FC = () => {
+  const { data: homeAbout, loading, error } = useSiteData((siteData) => siteData.content.homeAbout);
+
+  if (loading || error || !homeAbout) {
+    return null;
+  }
+
   return (
     <section className="home-section home-section-light">
       <div className="home-container">
-        <h2 className="home-section-title">Why CO-IN Symposia</h2>
+        <h2 className="home-section-title">{homeAbout.title}</h2>
 
         <div className="about-layout">
           <div>
             <p className="home-paragraph">
-              CO-IN Symposia is an international conference platform focused on science and technology.
-              We connect researchers, educators, and industry contributors through programs designed for
-              practical outcomes and credible academic exchange.
+              {homeAbout.introPrimary}
             </p>
             <p className="home-paragraph">
-              Our model is built around conference services, structured delivery experience, and
-              forward-looking global education and technology initiatives.
+              {homeAbout.introSecondary}
             </p>
 
             <ul className="about-highlight-list">
-              {aboutHighlights.map((item) => (
+              {homeAbout.highlights.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -42,7 +32,7 @@ const About: React.FC = () => {
           <div className="home-panel">
             <h3 className="home-panel-title">Current Snapshot</h3>
             <div className="about-stats-grid">
-              {impactStats.map((stat) => (
+              {homeAbout.stats.map((stat) => (
                 <div key={stat.label} className="about-stat-card">
                   <p className="about-stat-value">{stat.value}</p>
                   <p className="about-stat-label">{stat.label}</p>

@@ -1,12 +1,38 @@
 import React, { useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import { conferencesData } from '../data/conferences';
+import { useSiteData } from '../hooks/useSiteData';
 
 const Conferences: React.FC = () => {
+  const { data: conferencesData, loading, error } = useSiteData((siteData) => siteData.conferences);
+
   useEffect(() => {
     document.title = 'Conferences | CO-IN Symposia';
   }, []);
+
+  if (loading) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>Loading...</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error || !conferencesData) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>Conference data unavailable</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="app">

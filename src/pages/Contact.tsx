@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
+import { useSiteData } from '../hooks/useSiteData';
 
 const Contact: React.FC = () => {
+  const { data: content, loading, error } = useSiteData((siteData) => siteData.content);
+
   useEffect(() => {
     document.title = 'Contact Us | CO-IN Symposia';
   }, []);
@@ -29,15 +32,47 @@ const Contact: React.FC = () => {
     alert('Thank you for your message! We will get back to you soon.');
   };
 
+  if (loading) {
+    return (
+      <div className="app">
+        <Header />
+        <main className="contact-page">
+          <section className="contact-hero">
+            <h1>Loading...</h1>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error || !content) {
+    return (
+      <div className="app">
+        <Header />
+        <main className="contact-page">
+          <section className="contact-hero">
+            <h1>Contact data unavailable</h1>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const addressLines = [
+    content.footer.address.company,
+    content.footer.address.street,
+    content.footer.address.city
+  ];
+
   return (
     <div className="app">
       <Header />
       <main className="contact-page">
         <section className="contact-hero">
-          <h1>Contact Us</h1>
-          <p>
-            Have questions about our services or want to discuss your conference needs? Get in touch with us today.
-          </p>
+          <h1>{content.contact.heroTitle}</h1>
+          <p>{content.contact.heroDescription}</p>
         </section>
 
         <section className="contact-grid">
@@ -46,35 +81,35 @@ const Contact: React.FC = () => {
 
             <div className="contact-item">
               <h4>Email</h4>
-              <a href="mailto:info@coinsymposia.org">info@coinsymposia.org</a>
+              <a href={`mailto:${content.footer.contact.email}`}>{content.footer.contact.email}</a>
             </div>
 
             <div className="contact-item">
               <h4>Phone</h4>
-              <a href="tel:+15122702990">+1 512 270 2990</a>
+              <a href={`tel:${content.footer.contact.phone.replace(/\s+/g, '')}`}>{content.footer.contact.phone}</a>
             </div>
 
             <div className="contact-item">
               <h4>Address</h4>
               <p>
-                CO-IN Symposia
-                <br />
-                123 Innovation Street
-                <br />
-                Tech City, TC 12345
-                <br />
-                Country
+                {addressLines.map((line) => (
+                  <React.Fragment key={line}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                ))}
               </p>
             </div>
 
             <div className="contact-item">
               <h4>Business Hours</h4>
               <p>
-                Monday - Friday: 9:00 AM - 6:00 PM
-                <br />
-                Saturday: 10:00 AM - 4:00 PM
-                <br />
-                Sunday: Closed
+                {content.contact.businessHours.map((hoursLine) => (
+                  <React.Fragment key={hoursLine}>
+                    {hoursLine}
+                    <br />
+                  </React.Fragment>
+                ))}
               </p>
             </div>
           </article>
@@ -106,36 +141,24 @@ const Contact: React.FC = () => {
               title="CO-IN Symposia Location"
               width="100%"
               height="100%"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.1234567891234!2d-74.00601234567891!3d40.71234567891234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzU0LjQiTiA3NMOuMDAnMjguMyJX!5e0!3m2!1sen!2sus!4v1234567891234"
+              src={content.contact.mapEmbedUrl}
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-          <p className="contact-map-note">
-            123 Innovation Street, Tech City, TC 12345 | Mon-Fri: 9AM-6PM | Sat: 10AM-4PM
-          </p>
+          <p className="contact-map-note">{content.contact.mapNote}</p>
         </section>
 
         <section className="contact-faq">
           <h3>FAQ</h3>
           <div className="contact-faq-grid">
-            <div>
-              <h4>How long does it take to plan a conference?</h4>
-              <p>Typically 3-6 months depending on the size and complexity of the event.</p>
-            </div>
-            <div>
-              <h4>Do you offer virtual conference options?</h4>
-              <p>Yes, we provide full virtual and hybrid conference solutions.</p>
-            </div>
-            <div>
-              <h4>What is your cancellation policy?</h4>
-              <p>Contact our team to discuss cancellation and refund policies.</p>
-            </div>
-            <div>
-              <h4>Do you handle sponsorships?</h4>
-              <p>Yes, we manage all sponsorship and exhibition arrangements.</p>
-            </div>
+            {content.contact.faq.map((item) => (
+              <div key={item.question}>
+                <h4>{item.question}</h4>
+                <p>{item.answer}</p>
+              </div>
+            ))}
           </div>
         </section>
       </main>

@@ -1,12 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { contentData } from '../../data/content';
+import { useSiteData } from '../../hooks/useSiteData';
 import SocialLinks from './SocialLinks';
 
 const Footer: React.FC = () => {
-  const addressText = `${contentData.footer.address.company}, ${contentData.footer.address.street}, ${contentData.footer.address.city}`;
+  const { data: footer, loading, error } = useSiteData((siteData) => siteData.content.footer);
+
+  if (loading) {
+    return (
+      <footer className="footer">
+        <div className="footer-content">
+          <p>Loading footer...</p>
+        </div>
+      </footer>
+    );
+  }
+
+  if (error || !footer) {
+    return (
+      <footer className="footer">
+        <div className="footer-content">
+          <p>Footer content unavailable.</p>
+        </div>
+      </footer>
+    );
+  }
+
+  const addressText = `${footer.address.company}, ${footer.address.street}, ${footer.address.city}`;
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressText)}`;
-  const phoneHref = `tel:${contentData.footer.contact.phone.replace(/\s+/g, '')}`;
+  const phoneHref = `tel:${footer.contact.phone.replace(/\s+/g, '')}`;
 
   return (
     <footer className="footer">
@@ -14,24 +36,24 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h3>📍 Address</h3>
           <a href={mapsHref} target="_blank" rel="noreferrer noopener" className="footer-contact-link">
-            {contentData.footer.address.company}
+            {footer.address.company}
           </a>
           <a href={mapsHref} target="_blank" rel="noreferrer noopener" className="footer-contact-link">
-            {contentData.footer.address.street}, {contentData.footer.address.city}
+            {footer.address.street}, {footer.address.city}
           </a>
         </div>
 
         <div className="footer-section">
           <h3>✉️ Mail Us</h3>
-          <a href={`mailto:${contentData.footer.contact.email}`} className="footer-contact-link">
-            {contentData.footer.contact.email}
+          <a href={`mailto:${footer.contact.email}`} className="footer-contact-link">
+            {footer.contact.email}
           </a>
         </div>
 
         <div className="footer-section">
           <h3>📞 Telephone</h3>
           <a href={phoneHref} className="footer-contact-link">
-            {contentData.footer.contact.phone}
+            {footer.contact.phone}
           </a>
         </div>
 
@@ -48,7 +70,7 @@ const Footer: React.FC = () => {
 
       <div className="footer-bottom">
         <p>
-          {contentData.footer.copyright}
+          {footer.copyright}
           {' | '}
           <Link to="/terms">Terms & Conditions</Link>
           {' | '}

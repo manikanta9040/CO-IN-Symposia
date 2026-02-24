@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { servicesData } from '../../data/services';
+import { useSiteData } from '../../hooks/useSiteData';
 
 const Services: React.FC = () => {
+  const { data: services, loading, error } = useSiteData((siteData) => siteData.services);
+
+  if (loading || error || !services) {
+    return null;
+  }
+
   return (
     <section className="services">
       <div className="services-grid">
-        {servicesData.map((service) => (
+        {services.map((service) => (
           <div key={service.id} className="service-card">
             <div className="icon">{service.icon}</div>
             <h3>{service.title}</h3>

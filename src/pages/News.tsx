@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import { newsData } from '../data/news';
+import { useSiteData } from '../hooks/useSiteData';
 
 const News: React.FC = () => {
+  const { data: newsData, loading, error } = useSiteData((siteData) => siteData.news);
+
   useEffect(() => {
     document.title = 'Latest News | CO-IN Symposia';
   }, []);
@@ -18,8 +20,32 @@ const News: React.FC = () => {
     return colors[category] || '#003d82';
   };
 
-  const featuredNews = newsData.filter(item => item.featured);
-  const regularNews = newsData.filter(item => !item.featured);
+  if (loading) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>Loading...</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error || !newsData) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>News unavailable</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const featuredNews = newsData.filter((item) => item.featured);
+  const regularNews = newsData.filter((item) => !item.featured);
 
   return (
     <div className="app">

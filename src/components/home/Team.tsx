@@ -1,7 +1,13 @@
 import React from 'react';
-import { professorsData } from '../../data/professors';
+import { useSiteData } from '../../hooks/useSiteData';
 
 const Team: React.FC = () => {
+  const { data: professors, loading, error } = useSiteData((siteData) => siteData.professors);
+
+  if (loading || error || !professors) {
+    return null;
+  }
+
   return (
     <section className="home-section home-section-muted">
       <div className="home-container">
@@ -11,7 +17,7 @@ const Team: React.FC = () => {
         </p>
 
         <div className="home-card-grid">
-          {professorsData.map((professor) => (
+          {professors.map((professor) => (
             <article key={professor.id} className="home-card">
               <span className="role-badge">{professor.role}</span>
               <h3>{professor.name}</h3>

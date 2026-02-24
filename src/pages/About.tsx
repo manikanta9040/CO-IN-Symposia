@@ -1,12 +1,38 @@
 import React, { useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import { contentData } from '../data/content';
+import { useSiteData } from '../hooks/useSiteData';
 
 const About: React.FC = () => {
+  const { data: about, loading, error } = useSiteData((siteData) => siteData.content.about);
+
   useEffect(() => {
     document.title = 'About Us | CO-IN Symposia';
   }, []);
+
+  if (loading) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '900px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>Loading...</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error || !about) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1, maxWidth: '900px', margin: '0 auto' }}>
+          <h1 style={{ color: '#003d82' }}>About content unavailable</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="app">
@@ -18,7 +44,7 @@ const About: React.FC = () => {
         <section style={{ marginBottom: '3rem' }}>
           <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Who We Are</h2>
           <p style={{ fontSize: '1.05rem', lineHeight: '1.8', marginBottom: '1.5rem', color: '#666' }}>
-            {contentData.about.description}
+            {about.description}
           </p>
         </section>
 
@@ -26,7 +52,7 @@ const About: React.FC = () => {
         <section style={{ marginBottom: '3rem', background: '#f8f9fa', padding: '2rem', borderRadius: '8px' }}>
           <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Our Aim</h2>
           <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#666' }}>
-            {contentData.about.mission}
+            {about.mission}
           </p>
         </section>
 
@@ -34,7 +60,7 @@ const About: React.FC = () => {
         <section style={{ marginBottom: '3rem' }}>
           <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Who We Serve</h2>
           <div style={{ display: 'grid', gap: '1.5rem' }}>
-            {contentData.about.whatWeDo.map((item, index) => (
+            {about.whatWeDo.map((item, index) => (
               <div
                 key={index}
                 style={{
@@ -57,7 +83,7 @@ const About: React.FC = () => {
         <section style={{ marginBottom: '3rem', background: '#f8f9fa', padding: '2rem', borderRadius: '8px' }}>
           <h2 style={{ color: '#003d82', marginBottom: '1.5rem', fontSize: '1.8rem' }}>Our Commitment</h2>
           <p style={{ fontSize: '1.05rem', lineHeight: '1.8', color: '#666' }}>
-            {contentData.about.commitment}
+            {about.commitment}
           </p>
         </section>
 

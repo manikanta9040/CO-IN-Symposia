@@ -1,0 +1,131 @@
+{
+  "hero": {
+    "title": "International Conferences For Science And Technology",
+    "subtitle": "CO-IN Symposia creates focused platforms for conference services, approach and experience, and future-facing education and technology collaboration."
+  },
+  "about": {
+    "title": "About CO-IN Symposia",
+    "description": "CO-IN Symposia establishes dynamic platforms across engineering and science disciplines, bringing together experts and collaborators for knowledge exchange, partnerships, and mutual support.",
+    "mission": "To advance international research dialogue through professionally managed conferences, strong scientific leadership, and inclusive global collaboration.",
+    "whatWeDo": [
+      "Deliver end-to-end conference services, from abstract handling to event delivery",
+      "Build high-impact scientific programs with trusted advisory experts",
+      "Support in-person, virtual, and hybrid conference formats",
+      "Grow global education and technology communities through recurring events",
+      "Provide publication, reporting, and post-conference continuity support"
+    ],
+    "commitment": "We are committed to creating professional and customized conference experiences that meet the needs of scientific communities while staying practical, transparent, and globally accessible."
+  },
+  "homeAbout": {
+    "title": "Why CO-IN Symposia",
+    "introPrimary": "CO-IN Symposia is an international conference platform focused on science and technology. We connect researchers, educators, and industry contributors through programs designed for practical outcomes and credible academic exchange.",
+    "introSecondary": "Our model is built around conference services, structured delivery experience, and forward-looking global education and technology initiatives.",
+    "highlights": [
+      "End-to-end services from abstracts to proceedings",
+      "Experienced board-guided scientific curation",
+      "Strong global reviewer and speaker network",
+      "In-person, hybrid, and virtual delivery expertise"
+    ],
+    "stats": [
+      {
+        "value": "25+",
+        "label": "Programs Delivered"
+      },
+      {
+        "value": "40+",
+        "label": "Countries In Network"
+      },
+      {
+        "value": "1,500+",
+        "label": "Researchers Engaged"
+      },
+      {
+        "value": "100%",
+        "label": "Program Accountability"
+      }
+    ]
+  },
+  "features": {
+    "title": "Approach & Experience",
+    "subtitle": "We combine practical conference operations with scientific oversight to deliver high-quality and scalable events.",
+    "items": [
+      {
+        "icon": "📝",
+        "title": "Abstract And Program Workflows",
+        "description": "Submission, review, revision, and final scheduling workflows designed for academic quality and operational clarity."
+      },
+      {
+        "icon": "🎤",
+        "title": "Speaker And Session Coordination",
+        "description": "Structured keynote and technical-session orchestration with clear communication and milestone tracking."
+      },
+      {
+        "icon": "📚",
+        "title": "Proceedings And Publications",
+        "description": "Editorial support for manuscripts and conference proceedings aligned to indexing and archival requirements."
+      },
+      {
+        "icon": "🖥️",
+        "title": "Hybrid Delivery Infrastructure",
+        "description": "Reliable tools for virtual attendance, live sessions, recordings, and post-event access."
+      },
+      {
+        "icon": "🤝",
+        "title": "Board-Led Quality Assurance",
+        "description": "Scientific board and advisory participation to keep content relevant, balanced, and globally credible."
+      },
+      {
+        "icon": "📈",
+        "title": "Post-Conference Continuity",
+        "description": "Outcome reports, archive delivery, and follow-up planning to extend impact beyond the conference dates."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Build Your Next Symposium With CO-IN",
+    "description": "From board-guided scientific curation to full operational delivery, CO-IN helps you run conferences that are credible, efficient, and globally connected.",
+    "primaryLabel": "Contact Us",
+    "secondaryLabel": "Explore Services"
+  },
+  "contact": {
+    "heroTitle": "Contact Us",
+    "heroDescription": "Have questions about our services or want to discuss your conference needs? Get in touch with us today.",
+    "businessHours": [
+      "Monday - Friday: 9:00 AM - 6:00 PM",
+      "Saturday: 10:00 AM - 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "mapEmbedUrl": "https://www.google.com/maps?q=5900+Balcones+Dr+STE+100,+Austin,+TX+78731&output=embed",
+    "mapNote": "5900 Balcones Dr STE 100, Austin, TX 78731, USA | Mon-Fri: 9AM-6PM | Sat: 10AM-4PM",
+    "faq": [
+      {
+        "question": "How long does it take to plan a conference?",
+        "answer": "Typically 3-6 months depending on the size and complexity of the event."
+      },
+      {
+        "question": "Do you offer virtual conference options?",
+        "answer": "Yes, we provide full virtual and hybrid conference solutions."
+      },
+      {
+        "question": "What is your cancellation policy?",
+        "answer": "Contact our team to discuss cancellation and refund policies."
+      },
+      {
+        "question": "Do you handle sponsorships?",
+        "answer": "Yes, we manage sponsorship and exhibition arrangements."
+      }
+    ]
+  },
+  "footer": {
+    "address": {
+      "company": "CO-IN Symposia LLC",
+      "street": "5900 Balcones Dr STE 100",
+      "city": "Austin, TX 78731, USA"
+    },
+    "contact": {
+      "email": "info@coinsymposia.org",
+      "phone": "+1 512 270 2990"
+    },
+    "copyright": "2026 © CO-IN SYMPOSIA LLC. All rights reserved."
+  }
+}

@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { newsData } from '../../data/news';
+import { useSiteData } from '../../hooks/useSiteData';
 
 const LatestUpdates: React.FC = () => {
-  const recentNews = newsData.slice(0, 3);
+  const { data: news, loading, error } = useSiteData((siteData) => siteData.news);
+  const recentNews = news?.slice(0, 3) ?? [];
+
+  if (loading || error || !news) {
+    return null;
+  }
 
   return (
     <section className="home-section home-section-light">

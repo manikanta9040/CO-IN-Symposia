@@ -1,12 +1,38 @@
 import React, { useEffect } from 'react';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
-import { detailedServicesData } from '../data/services';
+import { useSiteData } from '../hooks/useSiteData';
 
 const Services: React.FC = () => {
+  const { data: detailedServicesData, loading, error } = useSiteData((siteData) => siteData.detailedServices);
+
   useEffect(() => {
     document.title = 'Our Services | CO-IN Symposia';
   }, []);
+
+  if (loading) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1 }}>
+          <h1 style={{ color: '#003d82' }}>Loading...</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error || !detailedServicesData) {
+    return (
+      <div className="app">
+        <Header />
+        <main style={{ padding: '4rem 2rem', flex: 1 }}>
+          <h1 style={{ color: '#003d82' }}>Service data unavailable</h1>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="app">
