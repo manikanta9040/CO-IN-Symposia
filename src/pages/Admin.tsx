@@ -165,7 +165,11 @@ const Admin: React.FC = () => {
           </div>
 
           <div className="admin-actions">
-            <button type="button" className="secondary-button" onClick={handleResetOverride}>
+            <button
+              type="button"
+              className="secondary-button admin-secondary-button"
+              onClick={handleResetOverride}
+            >
               Reset to Default Data
             </button>
           </div>

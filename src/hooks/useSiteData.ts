@@ -97,7 +97,9 @@ const loadSiteData = async (): Promise<SiteData> => {
       if (!payloadBase64) {
         throw new Error(`Missing section "${section}" in site-data.csv`);
       }
-      const decoded = atob(payloadBase64);
+      const binaryString = atob(payloadBase64);
+      const bytes = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
+      const decoded = new TextDecoder('utf-8').decode(bytes);
       return JSON.parse(decoded) as T;
     };
 
