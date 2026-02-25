@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { SiteData } from '../types/siteData';
+import siteDataCsvUrl from '../data/site-data.csv?url';
 
 let cachedSiteData: SiteData | null = null;
 let siteDataPromise: Promise<SiteData> | null = null;
@@ -60,33 +61,54 @@ export const hasSiteDataOverride = (): boolean => {
 };
 
 const loadSiteData = async (): Promise<SiteData> => {
-  const loadJson = async <T,>(path: string): Promise<T> => {
-    const response = await fetch(path);
-    if (!response.ok) {
-      throw new Error(`Failed to load ${path} (${response.status})`);
-    }
-    return (await response.json()) as T;
-  };
-
   const loadBaseSiteData = async (): Promise<SiteData> => {
-    const [content, services, detailedServices, professors, news, conferences, reports] = await Promise.all([
-      loadJson<SiteData['content']>('/data/content.json'),
-      loadJson<SiteData['services']>('/data/services.json'),
-      loadJson<SiteData['detailedServices']>('/data/detailed-services.json'),
-      loadJson<SiteData['professors']>('/data/professors.json'),
-      loadJson<SiteData['news']>('/data/news.json'),
-      loadJson<SiteData['conferences']>('/data/conferences.json'),
-      loadJson<SiteData['reports']>('/data/reports.json')
-    ]);
+    const response = await fetch(siteDataCsvUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to load site data (${response.status})`);
+    }
+
+    const csv = await response.text();
+    const lines = csv
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    if (lines.length < 2) {
+      throw new Error('Site data file is empty.');
+    }
+
+    const sectionPayloadMap: Record<string, string> = {};
+
+    for (const line of lines.slice(1)) {
+      const commaIndex = line.indexOf(',');
+      if (commaIndex === -1) {
+        continue;
+      }
+      const section = line.slice(0, commaIndex).trim();
+      const payloadBase64 = line.slice(commaIndex + 1).trim();
+      if (!section || !payloadBase64) {
+        continue;
+      }
+      sectionPayloadMap[section] = payloadBase64;
+    }
+
+    const parseSection = <T,>(section: string): T => {
+      const payloadBase64 = sectionPayloadMap[section];
+      if (!payloadBase64) {
+        throw new Error(`Missing section "${section}" in site-data.csv`);
+      }
+      const decoded = atob(payloadBase64);
+      return JSON.parse(decoded) as T;
+    };
 
     return {
-      content,
-      services,
-      detailedServices,
-      professors,
-      news,
-      conferences,
-      reports
+      content: parseSection<SiteData['content']>('content'),
+      services: parseSection<SiteData['services']>('services'),
+      detailedServices: parseSection<SiteData['detailedServices']>('detailedServices'),
+      professors: parseSection<SiteData['professors']>('professors'),
+      news: parseSection<SiteData['news']>('news'),
+      conferences: parseSection<SiteData['conferences']>('conferences'),
+      reports: parseSection<SiteData['reports']>('reports')
     };
   };
 

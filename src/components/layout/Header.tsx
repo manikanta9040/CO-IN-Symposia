@@ -52,6 +52,7 @@ const Header: React.FC = () => {
             <Link to="/news" className={`nav-link ${isActive('/news') ? 'active' : ''}`} onClick={closeMenu}>News</Link>
             <Link to="/conferences" className={`nav-link ${isActive('/conferences') ? 'active' : ''}`} onClick={closeMenu}>Conferences</Link>
             <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`} onClick={closeMenu}>Contact</Link>
+            <Link to="/admin" className={`nav-link ${isActive('/admin') ? 'active' : ''}`} onClick={closeMenu}>Admin</Link>
           </nav>
 
           <div className="header-call">

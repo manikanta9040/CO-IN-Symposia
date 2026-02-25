@@ -697,7 +697,7 @@ button:hover {
 }
 
 .primary-button {
-  background: #8CE0EB;
+  background: #73926C;
   color: #fff;
 }
 
@@ -1171,4 +1171,48 @@ button:hover {
 .admin-error {
   color: #b42318;
   font-weight: 600;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.admin-field > span {
+  font-weight: 600;
+  color: #243850;
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea {
+  border: 1px solid #c8d3e1;
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  color: #102033;
+  background: #fff;
+}
+
+.admin-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.admin-field-full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 760px) {
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
 }
